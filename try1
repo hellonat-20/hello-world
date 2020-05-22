@@ -1,0 +1,13 @@
+import requests
+a = 'astros'
+link = 'http://api.open-notify.org/' + a 
+people = requests.get(link)
+
+
+people_json = people.json()
+print(people_json)
+
+print("The number of people in space : ",people_json['number'])
+
+for p in people_json['people']:
+	print(p['name'])
